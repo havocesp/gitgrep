@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/etsy/hound/config"
-	"github.com/etsy/hound/index"
-	"github.com/etsy/hound/vcs"
+	"github.com/gitgrep-com/hound/config"
+	"github.com/gitgrep-com/hound/index"
+	"github.com/gitgrep-com/hound/vcs"
 )
 
 type Searcher struct {
@@ -501,8 +501,8 @@ func newSearcherConcurrent(
 	s, err := newSearcher(dbpath, name, repo, refs, lim)
 	if err != nil {
 		resultCh <- searcherResult{
-			name:     name,
-			err:      err,
+			name: name,
+			err:  err,
 		}
 		return
 	}

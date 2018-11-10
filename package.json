@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/etsy/hound.git"
+    "url": "git+https://github.com/gitgrep-com/hound.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/etsy/hound/issues"
+    "url": "https://github.com/gitgrep-com/hound/issues"
   },
-  "homepage": "https://github.com/etsy/hound#readme",
+  "homepage": "https://github.com/gitgrep-com/hound#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
