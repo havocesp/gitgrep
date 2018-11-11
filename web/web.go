@@ -2,6 +2,7 @@ package web
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"sync"
 
@@ -20,7 +21,7 @@ type Server struct {
 	dev bool
 	ch  chan error
 
-	mux *http.ServeMux
+	mux http.Handler
 	lck sync.RWMutex
 }
 
@@ -32,8 +33,8 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 	s.lck.RLock()
 	defer s.lck.RUnlock()
-	if m := s.mux; m != nil {
-		m.ServeHTTP(w, r)
+	if s.mux != nil {
+		s.mux.ServeHTTP(w, r)
 	} else {
 		http.Error(w,
 			"Hound is not ready.",
@@ -41,7 +42,7 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func (s *Server) serveWith(m *http.ServeMux) {
+func (s *Server) serveWith(m http.Handler) {
 	s.lck.Lock()
 	defer s.lck.Unlock()
 	s.mux = m
@@ -64,13 +65,13 @@ func Start(cfg *config.Config, addr string, dev bool) *Server {
 		if cfg.FullCertFilename != "" && cfg.PrivCertFilename != "" {
 			err := http.ListenAndServeTLS(addr, cfg.FullCertFilename, cfg.PrivCertFilename, s)
 			if err != nil {
-				fmt.Printf("ListenAndServeTLS %s: %v\n", addr, err)
+				log.Printf("ListenAndServeTLS %s: %v", addr, err)
 			}
 			ch <- err
 		} else {
 			err := http.ListenAndServe(addr, s)
 			if err != nil {
-				fmt.Printf("ListenAndServe %s: %v\n", addr, err)
+				log.Printf("ListenAndServe %s: %v", addr, err)
 			}
 			ch <- err
 		}
@@ -92,6 +93,7 @@ func (s *Server) ServeWithIndex(idx map[string]*searcher.Searcher) error {
 	api.Setup(m, idx)
 
 	s.serveWith(m)
+	s = jwtCookieAuth(s)
 
 	return <-s.ch
 }

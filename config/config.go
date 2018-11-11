@@ -60,6 +60,9 @@ type Config struct {
 	HealthCheckURI        string           `json:"health-check-uri"`
 	FullCertFilename      string           `json:"full_cert_filename"`
 	PrivCertFilename      string           `json:"priv_cert_filename"`
+	JwtLoginURL           string           `json:"jwt_login_url"`
+	JwtCookieName         string           `json:"jwt_cookie_name"`
+	JwtSecretKey          string           `json:"jwt_secret_key"`
 }
 
 // SecretMessage is just like json.RawMessage but it will not
