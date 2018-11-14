@@ -34,5 +34,10 @@ dev: ALL
 test:
 	go test github.com/gitgrep-com/hound/...
 
+deploy-demo: ALL
+	ssh demo "mv /opt/gitgrep/bin/houndd /opt/gitgrep/bin/houndd-old || true"
+	scp $(GOPATH)/bin/houndd demo:/opt/gitgrep/bin/houndd
+	ssh demo "sudo service gitgrep restart"
+
 clean:
 	rm -rf .build node_modules
