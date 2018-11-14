@@ -64,6 +64,7 @@ type Config struct {
 	JwtCookieName         string           `json:"jwt_cookie_name"`
 	JwtSecretKey          string           `json:"jwt_secret_key"`
 	FaviconURL            string           `json:"favicon_url"`
+	TopHTML               string           `json:"top_html"`
 }
 
 // SecretMessage is just like json.RawMessage but it will not

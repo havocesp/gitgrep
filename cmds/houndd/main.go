@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"flag"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -81,8 +82,10 @@ func makeTemplateData(cfg *config.Config) (interface{}, error) {
 	var data struct {
 		ReposAsJson string
 		FaviconURL  string
+		TopHTML     template.HTML
 	}
 	data.FaviconURL = cfg.FaviconURL
+	data.TopHTML = template.HTML(cfg.TopHTML)
 
 	res := map[string]*config.Repo{}
 	for name, repo := range cfg.Repos {

@@ -3,10 +3,16 @@
     <head>
         <meta charset="utf-8">
         <title>Gitgrep - Excluded Files</title>
+        {{ if not (eq .FaviconURL "") }}
+        <link rel="icon" type="image/x-icon" href="{{ .FaviconURL }}"/>
+        {{ end }}
         <link rel="stylesheet" href="css/octicons/octicons.css">
         <link rel="stylesheet" href="css/hound.css">
     </head>
     <body>
+        {{ if not (eq .TopHTML "") }}
+        {{ .TopHTML }}
+        {{ end }}
         <div id="root"></div>
 
         <script src="js/react-{{.ReactVersion}}.min.js"></script>

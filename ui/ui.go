@@ -101,6 +101,7 @@ func renderForDev(w io.Writer, root string, c *content, cfg *config.Config, r *h
 		"Source":        html_template.HTML(buf.String()),
 		"Host":          r.Host,
 		"FaviconURL":    cfg.FaviconURL,
+		"TopHTML":       html_template.HTML(cfg.TopHTML),
 	})
 }
 
@@ -162,6 +163,7 @@ func renderForPrd(w io.Writer, c *content, cfg *config.Config, cfgJson string, r
 		"Source":        html_template.HTML(buf.String()),
 		"Host":          r.Host,
 		"FaviconURL":    cfg.FaviconURL,
+		"TopHTML":       html_template.HTML(cfg.TopHTML),
 	})
 }
 
