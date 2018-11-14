@@ -37,7 +37,7 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		s.mux.ServeHTTP(w, r)
 	} else {
 		http.Error(w,
-			"Hound is not ready.",
+			"Gitgrep is not ready.",
 			http.StatusServiceUnavailable)
 	}
 }

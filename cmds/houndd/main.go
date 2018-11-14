@@ -80,7 +80,9 @@ func registerShutdownSignal() <-chan os.Signal {
 func makeTemplateData(cfg *config.Config) (interface{}, error) {
 	var data struct {
 		ReposAsJson string
+		FaviconURL  string
 	}
+	data.FaviconURL = cfg.FaviconURL
 
 	res := map[string]*config.Repo{}
 	for name, repo := range cfg.Repos {

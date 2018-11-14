@@ -3,12 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <title>Hound</title>
+        <title>Gitgrep</title>
+        {{ if not (eq .FaviconURL "") }}
+        <link rel="icon" type="image/x-icon" href="{{ .FaviconURL }}"/>
+        {{ end }}
         <link rel="stylesheet" href="css/octicons/octicons.css">
         <link rel="stylesheet" href="css/hound.css">
         <link rel="search" href="//{{ .Host }}/open_search.xml"
               type="application/opensearchdescription+xml"
-              title="Hound" />
+              title="Gitgrep" />
     </head>
     <body>
         <div id="root">
