@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/gitgrep-com/hound/api"
-	"github.com/gitgrep-com/hound/config"
-	"github.com/gitgrep-com/hound/searcher"
-	"github.com/gitgrep-com/hound/ui"
+	"github.com/gitgrep-com/gitgrep/api"
+	"github.com/gitgrep-com/gitgrep/config"
+	"github.com/gitgrep-com/gitgrep/searcher"
+	"github.com/gitgrep-com/gitgrep/ui"
 )
 
 // Server is an HTTP server that handles all

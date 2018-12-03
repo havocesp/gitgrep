@@ -12,7 +12,7 @@ import (
 	"runtime"
 	text_template "text/template"
 
-	"github.com/gitgrep-com/hound/config"
+	"github.com/gitgrep-com/gitgrep/config"
 )
 
 // An http.Handler for the dev-mode case.

@@ -3,7 +3,7 @@ package client
 import (
 	"testing"
 
-	"github.com/gitgrep-com/hound/index"
+	"github.com/gitgrep-com/gitgrep/index"
 )
 
 // TODO(knorton):

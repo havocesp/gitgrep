@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/gitgrep-com/hound/vcs"
+	"github.com/gitgrep-com/gitgrep/vcs"
 )
 
 const exampleConfigFile = "config-example.json"

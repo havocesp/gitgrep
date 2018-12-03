@@ -8,7 +8,7 @@ import (
 	"net/http"
 
 	jwt "github.com/dgrijalva/jwt-go"
-	"github.com/gitgrep-com/hound/config"
+	"github.com/gitgrep-com/gitgrep/config"
 )
 
 func jwtCookieAuth(s *Server) *Server {

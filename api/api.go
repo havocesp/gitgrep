@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gitgrep-com/hound/config"
-	"github.com/gitgrep-com/hound/index"
-	"github.com/gitgrep-com/hound/searcher"
+	"github.com/gitgrep-com/gitgrep/config"
+	"github.com/gitgrep-com/gitgrep/index"
+	"github.com/gitgrep-com/gitgrep/searcher"
 )
 
 const (

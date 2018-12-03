@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/gitgrep-com/hound/config"
-	"github.com/gitgrep-com/hound/index"
-	"github.com/gitgrep-com/hound/vcs"
+	"github.com/gitgrep-com/gitgrep/config"
+	"github.com/gitgrep-com/gitgrep/index"
+	"github.com/gitgrep-com/gitgrep/vcs"
 )
 
 type Searcher struct {

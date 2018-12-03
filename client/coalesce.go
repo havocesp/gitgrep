@@ -1,7 +1,7 @@
 package client
 
 import (
-	"github.com/gitgrep-com/hound/index"
+	"github.com/gitgrep-com/gitgrep/index"
 )
 
 type Block struct {

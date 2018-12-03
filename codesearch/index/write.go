@@ -13,7 +13,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/gitgrep-com/hound/codesearch/sparse"
+	"github.com/gitgrep-com/gitgrep/codesearch/sparse"
 )
 
 // Index writing.  See read.go for details of on-disk format.
